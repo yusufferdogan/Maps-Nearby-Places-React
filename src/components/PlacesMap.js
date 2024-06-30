@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 const PlacesMap = () => {
   const { places } = useSelector((state) => state.places || { places: [] });
   const { center } = useSelector((state) => state.center);
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   const locations = places?.data?.places.map((place) => ({
     key: place.placeId,
@@ -20,10 +21,11 @@ const PlacesMap = () => {
   console.log(places)
   console.log(locations)
   console.log(center)
+  console.log('API Key:', apiKey);
 
   return (
     <APIProvider
-      apiKey={"AIzaSyDRypkw3g4eC3EIPs6K8kDclwotg9nOTtk"}
+      apiKey={apiKey}
     >
       <Map
         defaultZoom={13}
@@ -35,7 +37,7 @@ const PlacesMap = () => {
           zoom: 100,
         }}
         controller={true}
-        style={{ width: "100%", height: "500px" }}
+        style={{ width: "100%", height: "700px" }}
         
       >
       {locations.map((place) => (
