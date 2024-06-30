@@ -6,7 +6,6 @@ export const fetchPlaces = createAsyncThunk(
   async ({ latitude, longitude, radius }) => {
     console.log("lat",latitude, "long", longitude, "radius", radius);
     const response = await axios.get(
-      // `https://cors-anywhere.herokuapp.com/https://web-production-8958.up.railway.app/api/places/search`,
       'api/places/search',
       { params: { latitude, longitude, radius } }
     );
