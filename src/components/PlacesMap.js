@@ -5,19 +5,25 @@ import {
   Marker,
   InfoWindow
 } from "@vis.gl/react-google-maps";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
+import { setCenter } from '../features/center/centerSlice';
 
 const PlacesMap = () => {
-  const { places } = useSelector(
-    (state) => state.places || { places: [] }
-  );
+  const { places } = useSelector((state) => state.places);
   const { center } = useSelector((state) => state.center);
+  const dispatch = useDispatch();
+
   const apiKey = process.env.REACT_APP_API_KEY;
   const [selectedPlace, setSelectedPlace] = useState(null);
 
   const handleMarkerClick = useCallback((place) => {
     setSelectedPlace(place);
   }, []);
+
+  const handleDragEnd = useCallback((map) => {
+    const newCenter = map.getCenter();
+    dispatch(setCenter({ lat: newCenter.lat(), lng: newCenter.lng() }));
+  }, [dispatch]);
 
   console.log("places.",places);
   console.log("center", center);
@@ -36,8 +42,10 @@ const PlacesMap = () => {
         }}
         controller={true}
         style={{ width: "100%", height: "700px" }}
+        onDragEnd={(map) => handleDragEnd(map)}
+        drag = {true}
       >
-        {places.data.places.map((place) => (
+        {places && places.data && places.data.places && places.data.places.map((place) => (
           <Marker
             key={place.placeId}
             position={{lat: place.latitude, lng: place.longitude}}
@@ -52,10 +60,24 @@ const PlacesMap = () => {
             }}
             onCloseClick={() => setSelectedPlace(null)}
           >
-            <div>
+            <div className="relative">
+            <button
+                className="absolute top-0 right-0 p-1 bg-white rounded-full shadow-md focus:outline-none"
+                onClick={() => setSelectedPlace(null)}
+              >
+                &times;
+              </button>
               <h2>{selectedPlace.name}</h2>
               <p>{selectedPlace.vicinity}</p>
-              <p>Rating: {selectedPlace.rating}</p>
+              <p> {selectedPlace.rating ? `Rating: ${selectedPlace.rating}` : '' } </p>
+              {selectedPlace.photo && (
+                <img
+                  src={`https://maps.googleapis.com/maps/api/place/photo?photoreference=${selectedPlace.photo}&sensor=false&maxheight=400&maxwidth=400
+                  &key=${apiKey}`}
+                  alt={`${selectedPlace.name}`}
+                  className="w-60 h-60 my-2"
+                />
+              )}
             </div>
           </InfoWindow>
         )}
