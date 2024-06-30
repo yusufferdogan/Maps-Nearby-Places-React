@@ -16,9 +16,9 @@ const PlacesForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-wrap items-center mb-4">
+    <form onSubmit={handleSubmit} className="flex flex-wrap items-center mb-4 justify-center">
       <div className="max-w-sm mr-4">
-        <label htmlFor="latitude" className="ml-4 block text-sm font-medium">Latitude</label>
+        <label htmlFor="latitude" className="block text-sm font-medium mb-2">Latitude</label>
         <input
           type="text"
           id="latitude"
@@ -30,7 +30,7 @@ const PlacesForm = () => {
       </div>
 
       <div className="max-w-sm mr-4">
-        <label htmlFor="longitude" className="block text-sm font-medium ml-4">Longitude</label>
+        <label htmlFor="longitude" className="block text-sm font-medium mb-2">Longitude</label>
         <input
           type="text"
           id="longitude"
@@ -42,7 +42,7 @@ const PlacesForm = () => {
       </div>
 
       <div className="max-w-sm mr-4">
-        <label htmlFor="radius" className="block text-sm font-medium ml-4">Radius</label>
+        <label htmlFor="radius" className="block text-sm font-medium mb-2">Radius</label>
         <input
           type="text"
           id="radius"
