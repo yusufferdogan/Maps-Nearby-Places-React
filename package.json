@@ -43,7 +43,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://web-production-8958.up.railway.app",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
