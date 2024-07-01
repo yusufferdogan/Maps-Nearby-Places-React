@@ -11,7 +11,9 @@ const PlacesForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fetchPlaces({ latitude, longitude, radius }));
+    dispatch(fetchPlaces({ latitude, longitude, radius }))   
+    .then(response => console.log("Places fetched:", response))
+    .catch(err => console.error("Error fetching places:", err));;
     dispatch(setCenter({ lat: parseFloat(latitude), lng: parseFloat(longitude) }));
   };
 
