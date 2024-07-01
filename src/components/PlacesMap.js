@@ -14,6 +14,7 @@ const PlacesMap = () => {
   const dispatch = useDispatch();
 
   const apiKey = process.env.REACT_APP_API_KEY;
+  const apiKey2 = process.env.API_KEY;
   const [selectedPlace, setSelectedPlace] = useState(null);
 
   const handleMarkerClick = useCallback((place) => {
@@ -73,7 +74,7 @@ const PlacesMap = () => {
               {selectedPlace.photo && (
                 <img
                   src={`https://maps.googleapis.com/maps/api/place/photo?photoreference=${selectedPlace.photo}&sensor=false&maxheight=400&maxwidth=400
-                  &key=${apiKey}`}
+                  &key=${apiKey2}`}
                   alt={`${selectedPlace.name}`}
                   className="w-60 h-60 my-2"
                 />
