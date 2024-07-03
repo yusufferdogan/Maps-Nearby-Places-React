@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Maps-Nearby-Places-React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a React application that interacts with the Google Maps API to find and display nearby places based on user input for latitude, longitude, and radius. The application uses Redux for state management and Tailwind CSS for styling.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **User Input Form:** Users can input latitude, longitude, and radius to search for nearby places.
+- **Google Maps Integration:** Displays the searched places on a Google Map with markers.
+- **Place Details:** Shows detailed information, including photos of the places.
+- **Responsive Design:** Tailwind CSS ensures the application looks good on various screen sizes.
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yusufferdogan/Maps-Nearby-Places-React.git
+    cd Maps-Nearby-Places-React
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
 
-### `npm test`
+3. Create a `.env` file in the root directory with the following content:
+    ```
+    REACT_APP_API_KEY=YOUR_GOOGLE_MAPS_API_KEY
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **src/components:** Contains React components such as `PlacesForm`, `PlacesMap`, and `Header`.
+- **src/features:** Contains Redux slices for managing state.
+  - **centerSlice.js:** Manages the center position of the map.
+  - **placesSlice.js:** Manages the places data fetched from the backend API.
+- **src/app:** Configures the Redux store.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Open the application in your browser.
+2. Enter the latitude, longitude, and radius in the form and click the "Search" button.
+3. The map will update to show markers for the searched places, and a detailed view with photos will be displayed when clicking on a marker.
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+[https://maps-nearby-places-react.vercel.app/](https://maps-nearby-places-react.vercel.app/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributing
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## License
 
-## Learn More
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize the `README.md` file further to better suit your project's specifics and guidelines.
