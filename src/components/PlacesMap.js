@@ -71,14 +71,14 @@ const PlacesMap = () => {
               <h2>{selectedPlace.name}</h2>
               <p>{selectedPlace.vicinity}</p>
               <p> {selectedPlace.rating ? `Rating: ${selectedPlace.rating}` : '' } </p>
-              {selectedPlace.photo && (
+              {/* {selectedPlace.photo && (
                 <img
                   src={`https://maps.googleapis.com/maps/api/place/photo?photoreference=${selectedPlace.photo}&sensor=false&maxheight=400&maxwidth=400
                   &key=${apiKey2}`}
                   alt={`${selectedPlace.name}`}
                   className="w-60 h-60 my-2"
                 />
-              )}
+              )} */}
             </div>
           </InfoWindow>
         )}
