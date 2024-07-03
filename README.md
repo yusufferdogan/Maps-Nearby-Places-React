@@ -2,6 +2,10 @@
 
 This repository contains a React application that interacts with the Google Maps API to find and display nearby places based on user input for latitude, longitude, and radius. The application uses Redux for state management and Tailwind CSS for styling.
 
+## Deployment
+
+[https://maps-nearby-places-react.vercel.app/](https://maps-nearby-places-react.vercel.app/)
+
 ## Features
 
 - **User Input Form:** Users can input latitude, longitude, and radius to search for nearby places.
@@ -46,18 +50,6 @@ This repository contains a React application that interacts with the Google Maps
 2. Enter the latitude, longitude, and radius in the form and click the "Search" button.
 3. The map will update to show markers for the searched places, and a detailed view with photos will be displayed when clicking on a marker.
 
-## Deployment
-
-[https://maps-nearby-places-react.vercel.app/](https://maps-nearby-places-react.vercel.app/)
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Feel free to customize the `README.md` file further to better suit your project's specifics and guidelines.
